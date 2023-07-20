@@ -1,0 +1,9 @@
+(AB' + A'B)(C + D')
+AB'C + AB'D' + A'BC + A'BD'
+AB'C(D+D') + AB'D'(C+C') + A'BC(D+D') + A'BD'(C+C')
+AB'CD + AB'CD' + AB'CD' + AB'C'D' + A'BCD + A'BCD' + A'BCD' + A'BC'D'
+AB'CD + AB'CD' + AB'C'D' + A'BCD + A'BCD' + A'BC'D'
+1011 + 1010 + 1000 + 0111 + 0110 + 0100
+11, 10, 8, 7, 6, 4
+
+Em=(4,6,7,8,10,11)
