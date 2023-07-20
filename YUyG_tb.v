@@ -1,3 +1,5 @@
+//Gleezell Vina A. Uy S14
+
 `timescale 1ns / 1ps
 
 module YUyG_tb();
