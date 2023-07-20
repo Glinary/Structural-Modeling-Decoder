@@ -18,7 +18,6 @@ module YUyG_tb();
         #10 t_en = 1'b0;
         for (i = 1; i < 17; i++)
             #10 t_input = i;
-        $finish; // Finish the simulation after the second round of testing
     end
 
     initial
