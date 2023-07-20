@@ -11,7 +11,6 @@ AB'CD + AB'CD' + AB'C'D' + A'BCD + A'BCD' + A'BC'D'
 11, 10, 8, 7, 6, 4
 
 Em=(4,6,7,8,10,11)
-
 */
 
 `timescale 1ns / 1ps
@@ -22,7 +21,7 @@ Em=(4,6,7,8,10,11)
 //implement negative output
 module YUyG(En, F, A, B, C, D);
     input En, A, B, C, D;
-    output F;
+    output reg F;
     wire E0, E1, E2, E3, O0, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15;
     wire temp1, temp2, temp3, temp4, temp5, temp6;
 
@@ -37,7 +36,13 @@ module YUyG(En, F, A, B, C, D);
     not_6 G7(temp1, temp2, temp3, temp4, temp5, temp6, O4, O6, O7, O8, O10, O11);
 
     //nand
-    assign F = ~(temp1 & temp2 & temp3 & temp4 & temp5 & temp6);
+    always @*
+    begin
+        if (En == 1)
+            F = ~(temp1 & temp2 & temp3 & temp4 & temp5 & temp6);
+        else
+            F = 1'bZ; // Set F to high-impedance ('z)
+    end
 endmodule
 
 module not_6(F1, F2, F3, F4, F5, F6, O1, O2, O3, O4, O5, O6);
